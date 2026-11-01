@@ -385,8 +385,9 @@ html[data-theme="dark"] #theme-toggle .icon-moon { display: none; }
   font-family: var(--font-display); font-weight: 900;
   font-size: 0.9rem;
 }
-.sticker-1 { background: var(--yellow); color: #17130f; top: 30px; right: 6%; --rot: 9deg; }
-.sticker-2 { background: var(--surface); bottom: 34px; left: -8px; --rot: -7deg; }
+/* nhãn dán bám theo góc .app-card (position: relative) nên không bao giờ đè chữ XP */
+.sticker-1 { background: var(--yellow); color: #17130f; top: -46px; right: -14px; --rot: 9deg; }
+.sticker-2 { background: var(--surface); bottom: -50px; left: -14px; --rot: -7deg; }
 
 /* ---------- 6. Marquee ---------- */
 .marquee {
@@ -430,11 +431,24 @@ html[data-theme="dark"] #theme-toggle .icon-moon { display: none; }
   background: var(--blue);
   border-block: var(--border);
 }
+.stats-note {
+  max-width: 52ch;
+  padding: 48px 0 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.stats-note em {
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  padding: 56px 0;
+  padding: 28px 0 56px;
 }
 .stat { padding: 26px; text-align: center; color: #17130f; background: var(--yellow); }
 .stat:nth-child(2) { background: var(--green); }
@@ -741,8 +755,6 @@ html[data-theme="dark"] .progress-fill { opacity: 0.95; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-stage { min-height: 0; padding: 26px 10px; }
   .app-card { max-width: 100%; margin-inline: auto; }
-  .sticker-1 { top: -12px; right: 12px; }
-  .sticker-2 { bottom: -12px; left: 12px; }
   .blob-1 { width: 130px; height: 130px; }
   .blob-2 { width: 104px; height: 104px; }
   .blob-3 { display: none; }
@@ -772,6 +784,7 @@ html[data-theme="dark"] .progress-fill { opacity: 0.95; }
   .nav-cta { display: none; }
   .nav-burger { display: grid; }
   .section { padding: 72px 0; }
+  .section-stats { padding: 0; }
   .bento { grid-template-columns: 1fr; }
   .tile-lg, .tile-mid, .tile-wide { grid-column: span 1; }
   .footer-inner { padding-right: 70px; }
