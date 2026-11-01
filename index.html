@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zumi — Biến bài tập thành trò chơi</title>
+  <meta name="description" content="Zumi giúp bạn chia nhỏ bài tập, đặt lịch ôn tập và biến mỗi buổi học thành một ván chơi có điểm thưởng." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;900&family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#hero">Bỏ qua menu</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Điều hướng chính">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">Z</span>
+        <span class="brand-name">Zumi</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features">Tính năng</a></li>
+        <li><a href="#how">Cách dùng</a></li>
+        <li><a href="#pricing">Bảng giá</a></li>
+        <li><a href="#faq">Hỏi đáp</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Đổi sang giao diện tối">
+          <span class="icon-sun" aria-hidden="true">☀️</span>
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+        </button>
+        <a class="btn btn-primary nav-cta" href="#signup">Dùng thử</a>
+        <button class="icon-btn nav-burger" id="nav-burger" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Mở menu">
+          <span aria-hidden="true">≡</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="badge badge-pink reveal">
+            <span aria-hidden="true">★</span> 4.9/5 từ 12.000+ học sinh
+          </p>
+          <h1 class="hero-title">
+            Bài tập <mark class="mark mark-yellow">vui hơn</mark> mỗi ngày,
+            <span class="wobble-wrap">không <mark class="mark mark-blue">stress.</mark></span>
+          </h1>
+          <p class="hero-sub reveal">
+            Zumi chia nhỏ mỗi bài tập thành các nhiệm vụ 15 phút, tự đặt lịch ôn tập
+            và thưởng bạn bằng điểm, huy hiệu cùng chuỗi ngày học đều.
+          </p>
+          <div class="hero-cta reveal">
+            <a class="btn btn-primary btn-lg" href="#signup">Bắt đầu miễn phí</a>
+            <a class="btn btn-ghost btn-lg" href="#how">Xem cách hoạt động →</a>
+          </div>
+          <ul class="hero-ticks reveal">
+            <li>✓ Không quảng cáo</li>
+            <li>✓ Miễn phí cho học sinh</li>
+            <li>✓ Dùng được offline</li>
+          </ul>
+        </div>
+
+        <div class="hero-stage" aria-hidden="true">
+          <span class="blob blob-1"></span>
+          <span class="blob blob-2"></span>
+          <span class="blob blob-3"></span>
+          <span class="sticker sticker-1" data-depth="3">+250 XP</span>
+          <span class="sticker sticker-2" data-depth="-2">Chuỗi 12 ngày 🔥</span>
+
+          <article class="card app-card" data-depth="1">
+            <header class="app-card-top">
+              <p class="app-card-day">Hôm nay · Thứ 5</p>
+              <p class="app-card-score">640 XP</p>
+            </header>
+            <ul class="task-list">
+              <li class="task is-done">
+                <span class="task-check">✓</span>
+                <span class="task-name">Toán — 6 bài phương trình</span>
+                <span class="task-time">15'</span>
+              </li>
+              <li class="task">
+                <span class="task-check"></span>
+                <span class="task-name">Văn — lập dàn ý nghị luận</span>
+                <span class="task-time">20'</span>
+              </li>
+              <li class="task">
+                <span class="task-check"></span>
+                <span class="task-name">Anh — 20 từ mới</span>
+                <span class="task-time">10'</span>
+              </li>
+            </ul>
+            <div class="progress-wrap">
+              <div class="progress-labels">
+                <span>Tiến độ hôm nay</span>
+                <span id="demo-progress-text">33%</span>
+              </div>
+              <div class="progress-track">
+                <span class="progress-fill" id="demo-progress-fill"></span>
+              </div>
+            </div>
+            <footer class="app-card-foot">
+              <span class="pill pill-green" id="demo-left-pill">Còn 2 nhiệm vụ</span>
+              <span class="pill pill-purple">Ôn mai · 19:00</span>
+            </footer>
+          </article>
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Chia nhỏ bài tập</span><span>✦</span>
+          <span>Lịch ôn tự động</span><span>✦</span>
+          <span>Điểm thưởng &amp; huy hiệu</span><span>✦</span>
+          <span>Không quảng cáo</span><span>✦</span>
+          <span>Dùng offline</span><span>✦</span>
+          <span>Chia nhỏ bài tập</span><span>✦</span>
+          <span>Lịch ôn tự động</span><span>✦</span>
+          <span>Điểm thưởng &amp; huy hiệu</span><span>✦</span>
+          <span>Không quảng cáo</span><span>✦</span>
+          <span>Dùng offline</span><span>✦</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Tính năng</p>
+          <h2 class="section-title">Ba thứ Zumi làm <mark class="mark mark-pink">tốt nhất</mark></h2>
+          <p class="section-sub">Không phải app ghi chú, cũng không phải mạng xã hội. Zumi là trọng tài buổi học của bạn.</p>
+        </header>
+
+        <div class="bento">
+          <article class="card tile tile-lg reveal">
+            <span class="tile-emoji">🧩</span>
+            <h3>Chia nhỏ bài lớn</h3>
+            <p>Dán đề bài hoặc chụp trang sách, Zumi gợi ý danh sách nhiệm vụ 15 phút và xếp theo mức khó.</p>
+          </article>
+
+          <article class="card tile tile-mid tile-yellow reveal">
+            <span class="tile-emoji">🔔</span>
+            <h3>Lịch ôn tự động</h3>
+            <p>Nhắc đúng lúc bạn sắp quên, theo chu kỳ giãn cách.</p>
+          </article>
+
+          <article class="card tile tile-mid tile-green reveal">
+            <span class="tile-emoji">🏆</span>
+            <h3>Thưởng thật</h3>
+            <p>Mỗi nhiệm vụ xong là có XP, huy hiệu và chuỗi ngày học.</p>
+          </article>
+
+          <article class="card tile tile-wide tile-blue reveal">
+            <span class="tile-emoji">👥</span>
+            <h3>Học theo lớp</h3>
+            <p>Thầy cô giao nhiệm vụ cho cả lớp, xem ai đang kẹt và hỗ trợ kịp thời — không cần nhóm chat ồn ào.</p>
+            <ul class="tile-chips">
+              <li>Giao bài 1 chạm</li>
+              <li>Theo sát tiến độ</li>
+              <li>Bảng xếp hạng lớp</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-stats" id="stats">
+      <div class="container">
+        <ul class="stats">
+          <li class="card stat reveal"><span class="stat-num" data-count-to="12400" data-suffix="+">0</span><span class="stat-label">Học sinh dùng hằng tuần</span></li>
+          <li class="card stat reveal"><span class="stat-num" data-count-to="486000" data-suffix="">0</span><span class="stat-label">Nhiệm vụ hoàn thành</span></li>
+          <li class="card stat reveal"><span class="stat-num" data-count-to="37" data-suffix="%">0</span><span class="stat-label">Điểm trung bình tăng sau 1 học kỳ</span></li>
+          <li class="card stat reveal"><span class="stat-num" data-count-to="4.9" data-decimals="1" data-suffix="/5">0</span><span class="stat-label">Đánh giá trên CH Play</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Cách dùng</p>
+          <h2 class="section-title">Ba bước, <mark class="mark mark-green">xong một buổi học</mark></h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">1</span>
+            <h3>Kể bạn phải làm gì</h3>
+            <p>Nhập danh sách bài tập trong 30 giây, hoặc để Zumi đọc thời khoá biểu giúp bạn.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">2</span>
+            <h3>Bấm Bắt đầu</h3>
+            <p>Hẹn giờ 15 phút hiện ra, điện thoại tự vào chế độ không làm phiền.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">3</span>
+            <h3>Nhận thưởng</h3>
+            <p>Xong nhiệm vụ, XP tăng, và lịch ôn cho ngày mai đã được xếp sẵn.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Bảng giá</p>
+          <h2 class="section-title">Rẻ hơn một <mark class="mark mark-yellow">ly trà sữa</mark></h2>
+          <p class="section-sub">Huỷ bất cứ lúc nào. Học sinh khó khăn được miễn phí trọn năm học.</p>
+        </header>
+
+        <div class="plans">
+          <article class="card plan reveal">
+            <h3 class="plan-name">Cá nhân</h3>
+            <p class="plan-price">0<span class="unit">đ</span><span class="per">/tháng</span></p>
+            <p class="plan-note">Đủ để bắt đầu và duy trì thói quen.</p>
+            <ul class="plan-list">
+              <li>✓ Không giới hạn nhiệm vụ</li>
+              <li>✓ Hẹn giờ học</li>
+              <li>✓ Chuỗi ngày &amp; XP</li>
+              <li>✗ Lịch ôn tự động</li>
+            </ul>
+            <a class="btn btn-dark btn-block" href="#signup">Miễn phí mãi mãi</a>
+          </article>
+
+          <article class="card plan plan-best reveal">
+            <span class="plan-flag">Phổ biến nhất</span>
+            <h3 class="plan-name">Học sinh</h3>
+            <p class="plan-price">29<span class="unit">k</span><span class="per">/tháng</span></p>
+            <p class="plan-note">Cho bạn muốn điểm số đi lên đều.</p>
+            <ul class="plan-list">
+              <li>✓ Tất cả gói Cá nhân</li>
+              <li>✓ Lịch ôn tự động</li>
+              <li>✓ Chụp trang sách thành nhiệm vụ</li>
+              <li>✓ Bộ huy hiệu nâng cao</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="#signup">Dùng thử 14 ngày</a>
+          </article>
+
+          <article class="card plan reveal">
+            <h3 class="plan-name">Lớp học</h3>
+            <p class="plan-price">199<span class="unit">k</span><span class="per">/tháng</span></p>
+            <p class="plan-note">Cho thầy cô, tối đa 45 học sinh.</p>
+            <ul class="plan-list">
+              <li>✓ Tất cả gói Học sinh</li>
+              <li>✓ Giao bài cho cả lớp</li>
+              <li>✓ Báo cáo tiến độ</li>
+              <li>✓ Hỗ trợ trong 24 giờ</li>
+            </ul>
+            <a class="btn btn-dark btn-block" href="#signup">Liên hệ</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="voices">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Góp ý</p>
+          <h2 class="section-title">Thu thập <mark class="mark mark-purple">ý kiến</mark></h2>
+          <p class="section-sub">Trang này là bài tập nên chưa có máy chủ. Ý kiến bạn gửi được giữ ngay trên máy bạn và hiện lại khi mở trang lần sau.</p>
+        </header>
+
+        <div class="feedback">
+          <form class="card feedback-form" id="feedback-form" novalidate>
+            <div class="field">
+              <label class="field-label" for="fb-name">Tên bạn <span class="optional">(không bắt buộc)</span></label>
+              <input class="input" type="text" id="fb-name" name="name" placeholder="Ví dụ: Minh, lớp 11A2" maxlength="40" autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label class="field-label" for="fb-text">Bạn nghĩ gì về Zumi?</label>
+              <textarea class="input feedback-text" id="fb-text" name="text" rows="4" maxlength="240" placeholder="Thích chỗ nào, chưa ổn chỗ nào..." required></textarea>
+              <div class="feedback-foot">
+                <span class="char-count" id="fb-count">0/240</span>
+                <button class="btn btn-primary" type="submit">Gửi ý kiến</button>
+              </div>
+            </div>
+
+            <p class="form-msg" id="fb-msg" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="feedback-side">
+            <p class="feedback-count" id="fb-total">Chưa có ý kiến nào</p>
+            <ul class="feedback-list" id="feedback-list" aria-live="polite"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container container-narrow">
+        <header class="section-head">
+          <p class="eyebrow">Hỏi đáp</p>
+          <h2 class="section-title">Còn thắc mắc?</h2>
+        </header>
+
+        <div class="faq-list">
+          <details class="card faq reveal">
+            <summary>Zumi có thật sự miễn phí không?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>Có. Gói Cá nhân miễn phí vĩnh viễn và không giới hạn số nhiệm vụ. Bạn chỉ trả tiền khi muốn lịch ôn tự động.</p>
+          </details>
+          <details class="card faq reveal">
+            <summary>Điểm XP có bán được không?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>Không. XP chỉ dùng để mở huy hiệu và xếp hạng trong lớp bạn đã tham gia.</p>
+          </details>
+          <details class="card faq reveal">
+            <summary>Dữ liệu bài tập của mình có riêng tư không?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>Riêng tư. Nội dung bạn nhập không dùng để quảng cáo, và bạn xoá toàn bộ được một chạm trong Cài đặt.</p>
+          </details>
+          <details class="card faq reveal">
+            <summary>Có dùng khi mất mạng không?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>Được. Hẹn giờ, nhiệm vụ và tiến độ chạy offline, rồi tự đồng bộ khi có mạng trở lại.</p>
+          </details>
+          <details class="card faq reveal">
+            <summary>Ghi âm hay ảnh của mình có bị gửi đi đâu không?<span class="faq-icon" aria-hidden="true">+</span></summary>
+            <p>Ảnh trang sách được xử lý trên máy bạn. Chỉ văn bản nhận diện mới cần gửi lên server khi bạn bấm Xác nhận.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cta" id="signup">
+      <div class="container">
+        <div class="card cta-card reveal">
+          <div class="cta-copy">
+            <h2 class="cta-title">Buổi học tới bắt đầu lúc <span class="cta-time">19:00</span></h2>
+            <p>Nhận một nhiệm vụ thử mỗi ngày, trong 7 ngày, để xem Zumi hợp với bạn không.</p>
+          </div>
+          <form class="cta-form" id="signup-form" novalidate>
+            <label class="sr-only" for="email">Email của bạn</label>
+            <input class="input" type="email" id="email" name="email" placeholder="ban@truong.edu.vn" autocomplete="email" required />
+            <button class="btn btn-primary" type="submit">Gửi cho mình</button>
+            <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">Z</span>
+        <span class="brand-name">Zumi</span>
+      </a>
+      <p class="footer-tag">Sản phẩm giả tưởng cho bài tập lập trình web.</p>
+      <ul class="footer-links">
+        <li><a href="#features">Tính năng</a></li>
+        <li><a href="#pricing">Bảng giá</a></li>
+        <li><a href="#faq">Hỏi đáp</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Zumi Lab</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Lên đầu trang">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
